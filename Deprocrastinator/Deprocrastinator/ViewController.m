@@ -12,6 +12,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *myTextField;
 @property NSString *addRowString;
 @property NSMutableArray *textInputArray;
+@property (strong, nonatomic) IBOutlet UITableView *myTableView;
 
 @end
 
@@ -39,6 +40,9 @@
 {
     self.addRowString = self.myTextField.text;
     [self.textInputArray addObject:self.addRowString];
+    [self.myTableView reloadData];
+    [self.myTextField resignFirstResponder];
+    self.myTextField.text = @"";
 
 }
 
@@ -56,6 +60,13 @@
 
     return cell;
     
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.textLabel.textColor = [UIColor greenColor];
+
 }
 
 @end

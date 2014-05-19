@@ -36,7 +36,7 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="40g-Je-2jM">
-                                <rect key="frame" x="112" y="64" width="97" height="30"/>
+                                <rect key="frame" x="8" y="64" width="236" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -45,8 +45,9 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dh8-wf-lfi">
-                                <rect key="frame" x="20" y="64" width="46" height="30"/>
+                                <rect key="frame" x="252" y="64" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="21"/>
                                 <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -59,6 +60,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yyn-0Z-DRb"/>
                     <connections>
+                        <outlet property="myTableView" destination="J9T-W1-vrL" id="Sf1-eq-xjF"/>
                         <outlet property="myTextField" destination="40g-Je-2jM" id="7a4-NB-ses"/>
                     </connections>
                 </viewController>
