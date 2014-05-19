@@ -13,6 +13,8 @@
 @property NSString *addRowString;
 @property NSMutableArray *textInputArray;
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
+@property (strong, nonatomic) IBOutlet UIButton *onEditButtonPressed;
+
 
 @end
 
@@ -66,6 +68,24 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.textLabel.textColor = [UIColor greenColor];
+
+    if([self.onEditButtonPressed.currentTitle isEqualToString:@"Done"])
+    {
+        [self.textInputArray removeObject:cell.textLabel.text];
+        [self.myTableView reloadData];
+    }
+
+
+}
+- (IBAction)onEditButtonPressed:(UIButton *)sender
+{
+    if([_onEditButtonPressed.currentTitle isEqualToString:@"Edit"])
+    {
+        [_onEditButtonPressed setTitle:@"Done" forState:UIControlStateNormal];
+        //[self.myTableView setEditing:YES animated:YES];
+    }
+    else
+        [_onEditButtonPressed setTitle:@"Edit" forState:UIControlStateNormal];
 
 }
 
