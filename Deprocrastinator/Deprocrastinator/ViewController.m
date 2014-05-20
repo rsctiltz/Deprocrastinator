@@ -26,8 +26,9 @@
 {
     [super viewDidLoad];
 
-    self.textInputArray = [NSMutableArray arrayWithObjects:@"Mow the lawn", @"Get Milk", @"Walk the Dog", @"Finish Stretches", nil];
-}
+    self.textInputArray = [NSMutableArray arrayWithObjects: @"Pick up Groceries", @"Pick up Kids", @"Walk the Dogs", @"Pay the Bills",nil];
+
+    }
 
 - (void)didReceiveMemoryWarning
 {
@@ -48,6 +49,7 @@
 
 }
 
+
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.textInputArray.count;
@@ -60,8 +62,24 @@
 
     cell.textLabel.text = [self.textInputArray objectAtIndex:indexPath.row];
 
+    //if([cell.textLabel.textColor isEqual:@""])
+
+    //{ cell.textLabel.textColor = [UIColor blackColor]; }
+
     return cell;
     
+}
+
+- (IBAction)onEditButtonPressed:(UIButton *)sender
+{
+    if([_onEditButtonPressed.currentTitle isEqualToString:@"Edit"])
+    {
+        [_onEditButtonPressed setTitle:@"Done" forState:UIControlStateNormal];
+      
+    }
+    else
+        [_onEditButtonPressed setTitle:@"Edit" forState:UIControlStateNormal];
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,17 +93,6 @@
         [self.myTableView reloadData];
     }
 
-
-}
-- (IBAction)onEditButtonPressed:(UIButton *)sender
-{
-    if([_onEditButtonPressed.currentTitle isEqualToString:@"Edit"])
-    {
-        [_onEditButtonPressed setTitle:@"Done" forState:UIControlStateNormal];
-        //[self.myTableView setEditing:YES animated:YES];
-    }
-    else
-        [_onEditButtonPressed setTitle:@"Edit" forState:UIControlStateNormal];
 
 }
 
